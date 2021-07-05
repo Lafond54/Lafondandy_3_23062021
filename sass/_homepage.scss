@@ -1,0 +1,57 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background:white;
+    
+}
+//Header
+.header {
+    padding: 1rem;
+    background: $gris-fond;
+    box-shadow: 0 0 0.5rem rgba(102, 102, 102, 0.945);
+
+&__logo {
+    font-family: 'Shrikhand', cursive;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+
+}
+}
+// Localisation
+.localisation {
+    display: flex;
+    justify-content: center;
+    background: rgba(233, 233, 233, 0.671);
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+.fas.fa-map-marker-alt {
+    font-size: 1.2rem;
+    padding-right: 0.9rem;
+}
+&__txt {
+    font-size: 1.2rem;
+    font-weight: 500;
+
+}
+}
+// Reservez
+.reservez {
+    text-align: center;
+    background: $gris-fond;
+    padding: 2rem;
+
+    &__titre {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    &__soustitre {
+        font-weight: 300;
+        font-size: 1rem;
+        margin: 2rem 0;
+    }
+
+    &__btn {
+        @include btnrose
+    }
+}

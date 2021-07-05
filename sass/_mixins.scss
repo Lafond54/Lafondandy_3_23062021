@@ -1,0 +1,10 @@
+// btn rose dégradé
+@mixin btnrose  {
+    background: linear-gradient(($secondaire), ($primaire));
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 0.8rem 1.5rem;
+    box-shadow: 5px 5px 11px rgba(146, 146, 146, 0.726);
+}

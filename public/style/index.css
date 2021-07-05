@@ -1,3 +1,107 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
 
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  background: white;
+}
+
+.header {
+  padding: 1rem;
+  background: rgba(240, 240, 240, 0.527);
+  box-shadow: 0 0 0.5rem rgba(102, 102, 102, 0.945);
+}
+.header__logo {
+  font-family: "Shrikhand", cursive;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.localisation {
+  display: flex;
+  justify-content: center;
+  background: rgba(233, 233, 233, 0.671);
+  padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+}
+.localisation .fas.fa-map-marker-alt {
+  font-size: 1.2rem;
+  padding-right: 0.9rem;
+}
+.localisation__txt {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.reservez {
+  text-align: center;
+  background: rgba(240, 240, 240, 0.527);
+  padding: 2rem;
+}
+.reservez__titre {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.reservez__soustitre {
+  font-weight: 300;
+  font-size: 1rem;
+  margin: 2rem 0;
+}
+.reservez__btn {
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 0.8rem 1.5rem;
+  box-shadow: 5px 5px 11px rgba(146, 146, 146, 0.726);
+}
 
 /*# sourceMappingURL=index.css.map */
