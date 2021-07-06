@@ -55,3 +55,47 @@ body {
         @include btnrose
     }
 }
+
+// Fonctionnement
+.fonctionnement {
+
+
+    &__titre {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 1rem;
+        padding-left: 1rem;
+    }
+    &__item {
+        @include itemfonctionnement;
+        position: relative;
+    }
+    &__puce {
+        position: absolute;
+        left: -15px;
+        top: 25px;
+        color: white;
+        text-align: center;
+        width: 1.6rem;
+        height: 1.6rem;
+        border-radius: 100%;
+        background: $primaire;
+        padding-top: 0.2rem;
+
+    }
+    // Pas la bonne facon..
+    // ..de faire pour les icones fonctionnement???
+    .fas.fa-mobile-alt {
+        @extend %icone_fonctionnement
+    }
+    .fas.fa-list-ul {
+        @extend %icone_fonctionnement
+    }
+    .fas.fa-store {
+        @extend %icone_fonctionnement
+    }
+
+
+}
+
+
