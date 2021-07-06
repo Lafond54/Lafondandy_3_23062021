@@ -71,20 +71,12 @@ body {
         position: relative;
     }
     &__puce {
-        position: absolute;
-        left: -15px;
-        top: 25px;
-        color: white;
-        text-align: center;
-        width: 1.6rem;
-        height: 1.6rem;
-        border-radius: 100%;
-        background: $primaire;
-        padding-top: 0.2rem;
+        @include pucefonctionnement
 
     }
-    // Pas la bonne facon..
-    // ..de faire pour les icones fonctionnement???
+    // Pas la bonne facon..utiliser placeholders..
+    // ..pour faire pour les icones fonctionnement???
+    
     .fas.fa-mobile-alt {
         @extend %icone_fonctionnement
     }
@@ -94,8 +86,16 @@ body {
     .fas.fa-store {
         @extend %icone_fonctionnement
     }
+}
+
+    // ??
+.articles {
+
+}
 
 
+.footer {
+    background-color: rgb(48, 48, 48);
 }
 
 

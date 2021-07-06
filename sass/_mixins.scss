@@ -18,3 +18,17 @@
     margin: 1.5rem;
     box-shadow: 5px 5px 11px rgba(179, 179, 179, 0.726);
 }
+
+// Puce liste fonctionnement
+@mixin pucefonctionnement {
+    position: absolute;
+    left: -15px;
+    top: 25px;
+    color: white;
+    text-align: center;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 100%;
+    background: $primaire;
+    padding-top: 0.2rem;
+}
