@@ -1,6 +1,6 @@
 // btn rose dégradé
 @mixin btnrose  {
-    background: linear-gradient(($secondaire), ($primaire));
+    background: linear-gradient(170deg,($secondaire), ($primaire));
     color: white;
     font-size: 1.1rem;
     font-weight: 600;
@@ -31,4 +31,13 @@
     border-radius: 100%;
     background: $primaire;
     padding-top: 0.2rem;
+}
+
+// Mise en forme h2
+@mixin h2setting {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    
 }
