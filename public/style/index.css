@@ -22,13 +22,14 @@ body {
 
 .header {
   padding: 1rem;
-  background: rgba(240, 240, 240, 0.527);
+  background: #f6f6f6;
   box-shadow: 0 0 0.5rem rgba(102, 102, 102, 0.945);
 }
 .header__logo {
   font-family: "Shrikhand", cursive;
   font-weight: 700;
   font-size: 2rem;
+  color: black;
   text-align: center;
 }
 
@@ -49,7 +50,7 @@ body {
 
 .reservez {
   text-align: center;
-  background: rgba(240, 240, 240, 0.527);
+  background: #f6f6f6;
   padding: 2rem;
 }
 .reservez__titre {
@@ -70,19 +71,23 @@ body {
   padding: 0.8rem 1.5rem;
   box-shadow: 5px 5px 11px rgba(146, 146, 146, 0.726);
 }
+.reservez__btn:hover {
+  background: #008766;
+  transition-duration: 0.6s;
+}
 
 .fonctionnement__titre {
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 1rem;
-  padding-left: 1.5rem;
+  padding-left: 1.2rem;
 }
 .fonctionnement__item {
   display: flex;
-  background: rgba(240, 240, 240, 0.527);
+  background: #f6f6f6;
   border-radius: 18px;
   padding: 1.8rem 2.2rem;
-  margin: 1.5rem;
+  margin: 1.2rem;
   box-shadow: 5px 5px 11px rgba(179, 179, 179, 0.726);
   position: relative;
 }
@@ -99,22 +104,26 @@ body {
   padding-top: 0.2rem;
 }
 .articles {
-  background-color: rgba(240, 240, 240, 0.527);
+  background-color: #f6f6f6;
   display: grid;
   grid-template-columns: 1fr;
+  padding-bottom: 2rem;
 }
 .articles__topheader {
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 1rem;
-  padding-left: 1.5rem;
+  padding-left: 1.2rem;
 }
 
 .article {
-  display: block;
+  position: relative;
   box-shadow: 0px 5px 8px rgba(179, 179, 179, 0.726);
   border-radius: 12px 12px 12px 12px;
-  margin: 1.5rem;
+  margin: 0.7rem 1.2rem 0.7rem 1.2rem;
+}
+.article:visited {
+  color: black;
 }
 .article__image {
   width: 100%;
@@ -123,7 +132,16 @@ body {
   border-radius: 12px 12px 0px 0px;
 }
 .article__nouveau {
-  background: rgba(21, 212, 123, 0.904);
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #99e2d0;
+  color: #008766;
+  padding: 0.4rem 0.7rem 0.4rem 0.7rem;
+  font-size: 0.9rem;
+  border-radius: 2px;
+  font-weight: 500;
+  box-shadow: 1px 5px 5px rgba(97, 97, 97, 0.288);
 }
 .article__footer {
   display: flex;
@@ -132,16 +150,143 @@ body {
   width: 100%;
 }
 .article__titre {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  padding: 0.6rem 0 0.2rem 0.5rem;
+  padding: 0.6rem 0 0.2rem 0.7rem;
 }
 .article__soustitre {
   display: block;
-  padding: 0rem 0 0.8rem 0.5rem;
+  padding: 0rem 0 0.8rem 0.7rem;
 }
 .footer {
-  background-color: #303030;
+  background-color: #353535;
+  padding-left: 1.5rem;
+  color: white;
+  font-size: 0.9rem;
+}
+.footer ol {
+  list-style: none;
+}
+.footer__logo {
+  font-family: "Shrikhand", cursive;
+  font-weight: 100;
+  font-size: 1rem;
+  color: white;
+  padding: 0.8rem 0 0.8rem 0;
+}
+.footer__item {
+  padding-bottom: 0.5rem;
+}
+.footer .fas.fa-utensils {
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+}
+.footer .fas.fa-hands-helping {
+  margin-right: 0.3rem;
+  font-size: 0.7rem;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  background: white;
+}
+
+.header--withback {
+  position: relative;
+}
+.header--withback .fas.fa-arrow-left {
+  position: absolute;
+  top: 30px;
+  left: 33px;
+  font-size: 1.2rem;
+  color: #474747;
+}
+
+.imgheader {
+  display: block;
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.mainplats {
+  padding-top: 40px;
+  background: #f6f6f6;
+  margin-top: -20px;
+  border-radius: 15px 15px 0 0;
+  z-index: 5;
+}
+
+.headerplats {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.headerplats__titre {
+  padding-left: 1.2rem;
+  width: 100%;
+  font-family: "Shrikhand", cursive;
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: black;
+}
+.sousmenus {
+  display: grid;
+}
+
+.menu {
+  display: flex;
+  background: white;
+  box-shadow: 0px 5px 9px rgba(224, 224, 224, 0.726);
+  border-radius: 12px 12px 12px 12px;
+  padding: 0.7rem;
+  margin: 0 1.2rem 1.2rem 1.2rem;
+}
+.menu__contenu {
+  width: 100%;
+}
+.menu__header {
+  padding-left: 1.2rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
+  margin-top: 1.5rem;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+.menu__titre {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-bottom: 0.4rem;
+}
+.menu__soustitre {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.menu__prix {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding-top: 1.8rem;
+  text-overflow: ellipsis;
+}
+
+.commander {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  width: 190px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.commander__btn {
+  padding: 0 1rem 0 1rem;
+  background: linear-gradient(170deg, #FF79DA, #9356DC);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 0.8rem 3rem;
+  box-shadow: 5px 5px 11px rgba(146, 146, 146, 0.726);
 }
 
 /*# sourceMappingURL=index.css.map */

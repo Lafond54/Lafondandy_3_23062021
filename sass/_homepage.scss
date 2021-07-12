@@ -1,8 +1,7 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     margin: 0;
-    background:white;
-    
+    background: white;
 }
 //Header
 .header {
@@ -10,13 +9,10 @@ body {
     background: $gris-fond;
     box-shadow: 0 0 0.5rem rgba(102, 102, 102, 0.945);
 
-&__logo {
-    font-family: 'Shrikhand', cursive;
-    font-weight: 700;
-    font-size: 2rem;
-    text-align: center;
-
-}
+    &__logo {
+        @include omf;
+        text-align: center;
+    }
 }
 // Localisation
 .localisation {
@@ -24,15 +20,14 @@ body {
     justify-content: center;
     background: rgba(233, 233, 233, 0.671);
     padding: 1.2rem 0.5rem 1.2rem 0.5rem;
-.fas.fa-map-marker-alt {
-    font-size: 1.2rem;
-    padding-right: 0.9rem;
-}
-&__txt {
-    font-size: 1.2rem;
-    font-weight: 500;
-
-}
+    .fas.fa-map-marker-alt {
+        font-size: 1.2rem;
+        padding-right: 0.9rem;
+    }
+    &__txt {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
 }
 // Reservez
 .reservez {
@@ -52,28 +47,29 @@ body {
     }
 
     &__btn {
-        @include btnrose
+        @include btnrose;
+        &:hover {
+            background: #008766;
+            transition-duration: 0.6s;
+        }
     }
 }
 
 // Fonctionnement
 .fonctionnement {
-
-
     &__titre {
-        @include h2setting
+        @include h2setting;
     }
     &__item {
         @include itemfonctionnement;
         position: relative;
     }
     &__puce {
-        @include pucefonctionnement
-
+        @include pucefonctionnement;
     }
     // Pas la bonne facon..utiliser placeholders..
     // ..pour faire pour les icones fonctionnement???
-    
+
     .fas.fa-mobile-alt {
         @extend %icone_fonctionnement;
     }
@@ -85,69 +81,83 @@ body {
     }
 }
 
-    // ??
+//
 .articles {
     background-color: $gris-fond;
-
-
     display: grid;
     grid-template-columns: 1fr;
+    padding-bottom: 2rem;
 
-
-
-        &__topheader {
-        @include h2setting
+    &__topheader {
+        @include h2setting;
     }
-
 }
 
 .article {
-    display: block;
+    position: relative;
     box-shadow: 0px 5px 8px rgba(179, 179, 179, 0.726);
-    border-radius:12px 12px 12px 12px;
-    margin: 1.5rem;
+    border-radius: 12px 12px 12px 12px;
+    margin: 0.7rem $margin 0.7rem $margin;
 
+    &:visited {
+        color: black;
+    }
 
     &__image {
-
         width: 100%;
         height: 160px;
         object-fit: cover;
         border-radius: 12px 12px 0px 0px;
-
     }
     &__nouveau {
-
-        background: rgba(21, 212, 123, 0.904);
-
-        
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: $vert-nouveau;
+        color: #008766;
+        padding: 0.4rem 0.7rem 0.4rem 0.7rem;
+        font-size: 0.9rem;
+        border-radius: 2px;
+        font-weight: 500;
+        box-shadow: 1px 5px 5px rgba(97, 97, 97, 0.288);
     }
     &__footer {
         display: flex;
-
-
     }
     &__txt {
-        width: 100%;        
+        width: 100%;
     }
     &__titre {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 700;
-        padding: 0.6rem 0 0.2rem 0.5rem;
+        padding: 0.6rem 0 0.2rem 0.7rem;
     }
     &__soustitre {
         display: block;
-        padding: 0rem 0 0.8rem 0.5rem;
+        padding: 0rem 0 0.8rem 0.7rem;
     }
 
     &__coeur {
-        
     }
 }
 
-
 .footer {
-    background-color: rgb(48, 48, 48);
+    @include pied;
+
+    &__logo {
+        @include omf(rgb(255, 255, 255), 1rem, 100);
+        padding: 0.8rem 0 0.8rem 0;
+    }
+    &__item {
+        padding-bottom: 0.5rem;
+    }
+
+    .fas.fa-utensils {
+        margin-right: 0.5rem;
+        font-size: 0.8rem;
+    }
+    .fas.fa-hands-helping {
+        margin-right: 0.3rem;
+        font-size: 0.7rem;
+    }
 }
-
-
