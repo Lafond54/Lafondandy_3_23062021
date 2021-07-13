@@ -63,9 +63,15 @@ body {
     &__item {
         @include itemfonctionnement;
         position: relative;
+        &:hover {
+            background: #9256dc2a;
+        }
     }
     &__puce {
         @include pucefonctionnement;
+    }
+    &__txt {
+        font-weight: 500;
     }
     // Pas la bonne facon..utiliser placeholders..
     // ..pour faire pour les icones fonctionnement???
@@ -79,6 +85,8 @@ body {
     .fas.fa-store {
         @extend %icone_fonctionnement;
     }
+
+
 }
 
 //
