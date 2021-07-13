@@ -92,7 +92,8 @@ body {
     }
 }
 
-.commander { //fond gris ?
+.commander {
+    //fond gris ?
     margin-top: 2rem;
     padding-bottom: 4rem;
     width: 190px;
@@ -100,6 +101,6 @@ body {
     margin-right: auto;
     &__btn {
         padding: 0 1rem 0 1rem;
-        @include btnrose (3rem);
+        @include btnrose(3rem);
     }
 }

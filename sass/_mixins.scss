@@ -1,25 +1,22 @@
 //style ohmyfood et autres font de ce style
-@mixin omf ($couleur: rgb(0, 0, 0), $taille: 2rem, $gras: 700) {
-    font-family: 'Shrikhand', cursive;
-    font-weight: $gras; 
-    font-size: $taille; 
+@mixin omf($couleur: rgb(0, 0, 0), $taille: 2rem, $gras: 700) {
+    font-family: "Shrikhand", cursive;
+    font-weight: $gras;
+    font-size: $taille;
     color: $couleur;
-    
 }
 
 @mixin omfadelete {
-    font-family: 'Shrikhand', cursive;
+    font-family: "Shrikhand", cursive;
     font-weight: 700;
     font-size: 2rem;
-    
+
     text-align: center;
 }
 
-
-
 // btn rose dégradé
-@mixin btnrose ($padside: 1.5rem) {
-    background: linear-gradient(170deg,($secondaire), ($primaire));
+@mixin btnrose($padside: 1.5rem) {
+    background: linear-gradient(170deg, ($secondaire), ($primaire));
     color: white;
     font-size: 1.1rem;
     font-weight: 600;
@@ -29,7 +26,7 @@
 }
 
 // Cadre fonctionnement
-@mixin itemfonctionnement  {
+@mixin itemfonctionnement {
     display: flex;
     background: $gris-fond;
     border-radius: 18px;
@@ -58,14 +55,15 @@
     font-weight: 600;
     margin-top: 1rem;
     padding-left: $padleft;
-    
 }
 
 // Footer
 @mixin pied {
-background-color: $fond-footer;
-padding-left: 1.5rem;
-ol {list-style: none;}
-color: white;
-font-size: 0.9rem;
+    background-color: $fond-footer;
+    padding-left: 1.5rem;
+    ol {
+        list-style: none;
+    }
+    color: white;
+    font-size: 0.9rem;
 }

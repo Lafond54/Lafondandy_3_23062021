@@ -63,7 +63,7 @@ body {
   margin: 2rem 0;
 }
 .reservez__btn {
-  background: linear-gradient(170deg, #FF79DA, #9356DC);
+  background: linear-gradient(170deg, #ff79da, #9356dc);
   color: white;
   font-size: 1.1rem;
   font-weight: 600;
@@ -103,7 +103,7 @@ body {
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 100%;
-  background: #9356DC;
+  background: #9356dc;
   padding-top: 0.2rem;
 }
 .fonctionnement__txt {
@@ -287,7 +287,7 @@ body {
 }
 .commander__btn {
   padding: 0 1rem 0 1rem;
-  background: linear-gradient(170deg, #FF79DA, #9356DC);
+  background: linear-gradient(170deg, #ff79da, #9356dc);
   color: white;
   font-size: 1.1rem;
   font-weight: 600;
