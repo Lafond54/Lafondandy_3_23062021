@@ -8,6 +8,10 @@ a:link {
   text-decoration: none;
 }
 
+a:visited {
+  color: black;
+}
+
 .fonctionnement .fas.fa-store, .fonctionnement .fas.fa-list-ul, .fonctionnement .fas.fa-mobile-alt {
   color: rgba(156, 156, 156, 0.932);
   font-size: 1rem;
@@ -72,11 +76,14 @@ body {
   box-shadow: 5px 5px 11px rgba(146, 146, 146, 0.726);
   position: relative;
 }
-.reservez__btn:hover:after {
-  opacity: 0.3;
+.reservez__btn:visited {
+  color: white;
+}
+.reservez__btn:hover::after {
+  opacity: 0.25;
   transition: opacity 0.6s, box-shadow 0.6s;
 }
-.reservez__btn:after {
+.reservez__btn::after {
   content: "";
   background: white;
   opacity: 0;
@@ -86,7 +93,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 30px;
-  box-shadow: 5px 5px 11px rgba(248, 0, 0, 0.76);
+  box-shadow: 5px 5px 11px rgba(90, 90, 90, 0.726);
 }
 
 .fonctionnement__titre {
@@ -164,6 +171,7 @@ body {
 }
 .article__footer {
   display: flex;
+  align-items: center;
 }
 .article__txt {
   width: 100%;
@@ -177,20 +185,21 @@ body {
   display: block;
   padding: 0rem 0 0.8rem 0.7rem;
 }
-.coeursvg {
+.article__coeursvg {
   stroke: black;
   stroke-width: 20;
   fill: transparent;
 }
-
 .article__coeur > svg {
   height: 25px;
   width: 25px;
 }
-
-.article__coeur:hover .coeursvg {
+.article__coeur:hover .article__coeursvg {
   fill: black;
   transition: fill 0.5s;
+}
+.article__coeur {
+  padding-right: 1rem;
 }
 
 .footer {
@@ -211,6 +220,9 @@ body {
 }
 .footer__item {
   padding-bottom: 0.5rem;
+}
+.footer__txt:link {
+  color: white;
 }
 .footer .fas.fa-utensils {
   margin-right: 0.5rem;
@@ -268,6 +280,23 @@ body {
   font-size: 1.7rem;
   color: black;
 }
+.headerplats__coeursvg {
+  stroke: black;
+  stroke-width: 20;
+  fill: transparent;
+}
+.headerplats__coeur > svg {
+  height: 30px;
+  width: 30px;
+}
+.headerplats__coeur:hover .headerplats__coeursvg {
+  fill: black;
+  transition: fill 0.5s;
+}
+.headerplats__coeur {
+  padding-right: 1.2rem;
+}
+
 .sousmenus {
   display: grid;
 }
@@ -286,10 +315,21 @@ body {
 .menu__header {
   padding-left: 1.2rem;
   padding-bottom: 0.5rem;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.9rem;
   margin-top: 1.5rem;
   font-size: 1.2em;
   font-weight: 300;
+  position: relative;
+}
+.menu__header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 1.2rem;
+  width: 50px;
+  height: 3px;
+  background: #99e2d0;
 }
 .menu__titre {
   font-size: 1.2rem;
@@ -308,14 +348,13 @@ body {
 }
 
 .commander {
+  width: 194px;
   margin-top: 2rem;
   padding-bottom: 4rem;
-  width: 190px;
   margin-left: auto;
   margin-right: auto;
 }
 .commander__btn {
-  padding: 0 1rem 0 1rem;
   background: linear-gradient(170deg, #ff79da, #9356dc);
   color: white;
   font-size: 1.1rem;
@@ -323,6 +362,26 @@ body {
   border-radius: 30px;
   padding: 0.8rem 3rem;
   box-shadow: 5px 5px 11px rgba(146, 146, 146, 0.726);
+  position: relative;
+}
+.commander__btn:visited {
+  color: white;
+}
+.commander__btn:hover::after {
+  opacity: 0.25;
+  transition: opacity 0.6s, box-shadow 0.6s;
+}
+.commander__btn::after {
+  content: "";
+  background: white;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  box-shadow: 5px 5px 11px rgba(90, 90, 90, 0.726);
 }
 
 /*# sourceMappingURL=index.css.map */

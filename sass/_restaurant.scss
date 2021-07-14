@@ -45,7 +45,9 @@ body {
         @include omf($taille: 1.7rem);
     }
 
+    @include coeur ($hcoeur:30px , $wcoeur:30px);
     &__coeur {
+        padding-right: 1.2rem;
     }
 }
 
@@ -67,10 +69,21 @@ body {
     &__header {
         padding-left: $padleft;
         padding-bottom: 0.5rem;
-        margin-bottom: 0.7rem;
+        margin-bottom: 0.9rem;
         margin-top: 1.5rem;
         font-size: 1.2em;
         font-weight: 300;
+        position: relative;
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: $padleft;
+            width: 50px;
+            height: 3px;
+            background: $vert-nouveau;
+        }
     }
 
     &__titre {
@@ -93,13 +106,16 @@ body {
 }
 
 .commander {
+    width: 194px;
     margin-top: 2rem;
     padding-bottom: 4rem;
-    width: 190px;
     margin-left: auto;
     margin-right: auto;
     &__btn {
-        padding: 0 1rem 0 1rem;
+
         @include btnrose(3rem);
     }
 }
+
+
+
