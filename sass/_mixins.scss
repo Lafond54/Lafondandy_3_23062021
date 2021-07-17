@@ -52,34 +52,36 @@
     background: $gris-fond;
     border-radius: 18px;
     padding: 1.8rem 2.2rem;
-    margin: $margin;
-    box-shadow: 5px 5px 11px rgba(179, 179, 179, 0.726);
+    
+
+    box-shadow: 1px 5px 11px rgba(194, 194, 194, 0.726);
+
 }
 
 // Puce liste fonctionnement
 @mixin pucefonctionnement {
     position: absolute;
-    left: -15px;
+    left: -12px;
     top: 25px;
     color: white;
     text-align: center;
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.4rem;
+    height: 1.4rem;
     border-radius: 100%;
     background: $primaire;
-    padding-top: 0.2rem;
+    padding-top: 0.1rem;
 }
 
 // Mise en forme h2
 @mixin h2setting {
     font-size: 1.5rem;
     font-weight: 600;
-    margin-top: 1rem;
+    margin: 2.1rem 0 0.9rem 0;
     padding-left: $padleft;
 }
 
 // Coeur svg
-@mixin coeur ($hcoeur:25px , $wcoeur:25px) {
+@mixin coeur($hcoeur: 25px, $wcoeur: 25px) {
     &__coeursvg {
         stroke: black;
         stroke-width: 20;
@@ -91,6 +93,7 @@
         width: $wcoeur;
     }
     &__coeur:hover &__coeursvg {
+        // fill="url(#Gradient-1)" // Degradé SVG ne marche pas
         fill: black;
         transition: fill 0.5s;
     }
@@ -105,4 +108,97 @@
     }
     color: white;
     font-size: 0.9rem;
+}
+
+
+//MQ @content ne marche pas erreur -> ;
+
+
+
+
+//Loading Spinner
+@mixin loadingspinner {
+.lspinner {
+    position: fixed;
+    z-index: 15;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.6;
+    display: flex;
+    z-index: 10;
+    animation: deletefond 3s forwards;
+}
+@keyframes deletefond {
+    90% {
+        opacity: 0.6;
+        pointer-events: initial;
+    }
+
+    to {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.load {
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+    z-index: 20;
+    width: $sizebar * 6.5;
+    height: $sizebar * 2;
+    display: flex;
+    justify-content: space-evenly;
+    pointer-events: none;
+
+    &__bar {
+
+        &:nth-child(1) {
+            background-color: $primaire;
+            border-radius: 10px 0 10px 0;
+        }
+        &:nth-child(2) {
+            background-color: $primaire;
+
+        }
+        &:nth-child(3) {
+            background-color: $vert-nouveau;
+
+        }
+        &:nth-child(4) {
+            background-color: $secondaire;
+
+        }
+        &:nth-child(5) {
+            background-color: $secondaire;
+            border-radius: 0 10px 0px 10px;
+        }
+        height: 100%;
+        width: $sizebar;
+        animation: bars 1.2s  ease-in-out forwards;
+        animation-direction: alternate;
+        animation-play-state: initial;
+
+        @for $i from 1 through 5 {
+            &--#{$i} {
+                animation-delay: 240ms * $i;
+            }
+        }
+    }
+}
+@keyframes bars {
+    0% {
+        transform: scaleY(0.5);
+    }
+    100% {
+        visibility: hidden;
+        transform: scaleY(1);
+    }
+}
 }

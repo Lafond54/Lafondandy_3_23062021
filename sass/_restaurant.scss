@@ -1,7 +1,10 @@
+
+
 body {
     font-family: "Roboto", sans-serif;
     margin: 0;
     background: white;
+
 }
 
 .header--withback {
@@ -26,9 +29,11 @@ body {
 }
 
 .mainplats {
+    max-width: 1400px;
+    margin: auto;
     padding-top: 40px;
     background: $gris-fond;
-    margin-top: -35px; 
+    margin-top: -35px;
     border-radius: 35px 35px 0 0;
     position: relative;
     z-index: 5;
@@ -45,7 +50,7 @@ body {
         @include omf($taille: 1.7rem);
     }
 
-    @include coeur ($hcoeur:30px , $wcoeur:30px);
+    @include coeur($hcoeur: 28px, $wcoeur: 28px);
     &__coeur {
         padding-right: 1.2rem;
     }
@@ -53,18 +58,21 @@ body {
 
 .sousmenus {
     display: grid;
+    @media (min-width: 1000px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .menu {
     display: flex;
     background: white;
     box-shadow: 0px 5px 9px rgba(224, 224, 224, 0.726);
-    border-radius: 12px 12px 12px 12px;
-    padding: 0.7rem;
+    border-radius: 15px;
     margin: 0 $margin 1.2rem $margin;
 
     &__contenu {
         width: 100%;
+        padding: 0.7rem;
     }
     &__header {
         padding-left: $padleft;
@@ -74,8 +82,8 @@ body {
         font-size: 1.2em;
         font-weight: 300;
         position: relative;
-        &::after{
-            content: '';
+        &::after {
+            content: "";
             display: block;
             position: absolute;
             bottom: 0;
@@ -87,21 +95,72 @@ body {
     }
 
     &__titre {
+        display: block;     //?    
+        width: 300px;   //?
         font-size: 1.2rem;
         font-weight: 500;
         padding-bottom: 0.4rem;
+        text-overflow: ellipsis; //?
+        overflow: hidden; //?
+        white-space: nowrap; //?
     }
 
     &__soustitre {
         font-size: 0.9rem;
         font-weight: 400;
+        text-overflow: ellipsis; //?
+        overflow: hidden; //?
     }
     &__prix {
         font-size: 0.9rem;
         font-weight: 600;
-        padding-top: 1.8rem;
+        padding-top: 2.8rem;
+        padding-right: 1rem;
+    }
 
-        text-overflow: ellipsis; // Bonne propriété ?
+    &__anim {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 15px 15px 0;
+        background: $vert-nouveau;        
+        transition-duration: 0.6s;        
+        width: 0;
+    }
+
+    &:hover > .menu__anim {
+        transform: width(60px);        
+        width: 90px;
+        animation: slideleft 0.6s;   
+        
+        
+    }
+    .fas.fa-check-circle {
+        color: rgba(255, 255, 255, 0);
+        font-size: 1.5rem;
+        transition-duration: 0.6s;
+    }
+
+    &:hover .fas.fa-check-circle {
+        transform: rotate(360deg);
+        animation: slideleft 0.6s;        
+        animation-fill-mode: both;
+    }
+
+    @keyframes slideleft {
+        0% {
+            color: rgba(255, 255, 255, 0);
+            opacity: 0;
+        }
+        45% {
+            color: white;
+            opacity: 1;
+        }
+
+        100% {
+            color: white;
+            opacity: 1;
+        }
     }
 }
 
@@ -112,10 +171,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     &__btn {
-
         @include btnrose(3rem);
     }
 }
-
-
-
