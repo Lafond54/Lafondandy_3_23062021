@@ -101,6 +101,7 @@
 
 // Footer
 @mixin pied {
+    
     background-color: $fond-footer;
     padding-left: 1.5rem;
     ol {
@@ -108,6 +109,53 @@
     }
     color: white;
     font-size: 0.9rem;
+    
+
+    @media (min-width: 1000px) {
+
+        padding: 0 5rem 0 5rem;
+ 
+    }
+
+
+    &__logo {
+        @include omf(rgb(255, 255, 255), 1rem, 100);
+        padding: 0.8rem 0 0.8rem 0;
+        @media (min-width: 1000px) {
+            width: 90px;
+            margin: auto;
+            padding-bottom: 1.5rem;
+        }
+    }
+    &__item {
+        padding-bottom: 0.5rem;
+    }
+    &__txt {
+        &:link {
+            color: white;
+        }
+    }
+  
+    &__liste {
+        @media (min-width: 1000px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    .fas.fa-utensils {
+        margin-right: 0.5rem;
+        font-size: 0.8rem;
+    }
+    .fas.fa-hands-helping {
+        margin-right: 0.3rem;
+        font-size: 0.7rem;
+    }
+
+
+
 }
 
 
@@ -129,7 +177,7 @@
     opacity: 0.6;
     display: flex;
     z-index: 10;
-    animation: deletefond 3s forwards;
+    animation: deletefond 2.9s forwards;
 }
 @keyframes deletefond {
     90% {
@@ -158,10 +206,12 @@
     pointer-events: none;
 
     &__bar {
+        opacity: 1;
 
         &:nth-child(1) {
             background-color: $primaire;
             border-radius: 10px 0 10px 0;
+            
         }
         &:nth-child(2) {
             background-color: $primaire;
@@ -169,7 +219,11 @@
         }
         &:nth-child(3) {
             background-color: $vert-nouveau;
-
+            border-radius: 100%;
+            width: $sizebar;
+            height: $sizebar;
+            margin-top: auto;
+            margin-bottom: auto;
         }
         &:nth-child(4) {
             background-color: $secondaire;
@@ -182,8 +236,9 @@
         height: 100%;
         width: $sizebar;
         animation: bars 1.2s  ease-in-out forwards;
-        animation-direction: alternate;
+
         animation-play-state: initial;
+        
 
         @for $i from 1 through 5 {
             &--#{$i} {
@@ -193,12 +248,53 @@
     }
 }
 @keyframes bars {
-    0% {
+    0% {opacity: 1;
+        
+    }
+    10% {
         transform: scaleY(0.5);
+
+    }
+    90% {
+        opacity: 1;
     }
     100% {
-        visibility: hidden;
+        opacity: 0;
         transform: scaleY(1);
+
+
     }
 }
+}
+
+// 
+@mixin animliste {
+
+    opacity: 0;
+    animation: animmenu 1.2s  forwards;
+    transition-timing-function: cubic-bezier(.29,-0.08,.65,1.58);
+
+    
+    @for $i from 1 through 3 {
+        &--#{$i} {
+            animation-delay: 250ms * $i;
+        }
+    }
+}
+
+@keyframes animmenu {
+    0% {
+        transform: translateY(15px);
+
+        opacity: 0;
+    }
+    55% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        opacity: 1;
+    }
 }

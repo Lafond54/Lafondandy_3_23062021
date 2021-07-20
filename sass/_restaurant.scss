@@ -162,6 +162,7 @@ body {
             opacity: 1;
         }
     }
+
 }
 
 .commander {
@@ -173,4 +174,8 @@ body {
     &__btn {
         @include btnrose(3rem);
     }
+}
+
+.itemmenu {   
+    @include animliste
 }
