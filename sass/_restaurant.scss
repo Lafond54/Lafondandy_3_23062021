@@ -52,7 +52,16 @@ body {
 
     @include coeur($hcoeur: 28px, $wcoeur: 28px);
     &__coeur {
+        position: relative;
         padding-right: 1.2rem;
+        &__rempli {
+            position: absolute;        
+            top: 0;
+            left: 0;
+            opacity: 0;
+            width: 28px;
+            height: 28px;
+        }
     }
 }
 
@@ -69,10 +78,14 @@ body {
     box-shadow: 0px 5px 9px rgba(224, 224, 224, 0.726);
     border-radius: 15px;
     margin: 0 $margin 1.2rem $margin;
+    overflow: hidden;
 
     &__contenu {
-        width: 100%;
+        flex: 1;
+        width: 0;
         padding: 0.7rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     &__header {
         padding-left: $padleft;
@@ -95,21 +108,21 @@ body {
     }
 
     &__titre {
-        display: block;     //?    
-        width: 300px;   //?
+        display: block;
         font-size: 1.2rem;
         font-weight: 500;
         padding-bottom: 0.4rem;
-        text-overflow: ellipsis; //?
-        overflow: hidden; //?
-        white-space: nowrap; //?
+        text-overflow: ellipsis; 
+        overflow: hidden; 
+        white-space: nowrap; 
     }
 
     &__soustitre {
         font-size: 0.9rem;
         font-weight: 400;
-        text-overflow: ellipsis; //?
-        overflow: hidden; //?
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
     }
     &__prix {
         font-size: 0.9rem;
@@ -126,42 +139,31 @@ body {
         background: $vert-nouveau;        
         transition-duration: 0.6s;        
         width: 0;
+        
     }
 
     &:hover > .menu__anim {
-        transform: width(60px);        
+
         width: 90px;
         animation: slideleft 0.6s;   
         
         
     }
     .fas.fa-check-circle {
-        color: rgba(255, 255, 255, 0);
+        color: rgba(255, 255, 255, 1);
         font-size: 1.5rem;
         transition-duration: 0.6s;
+        overflow: hidden;
     }
 
     &:hover .fas.fa-check-circle {
         transform: rotate(360deg);
         animation: slideleft 0.6s;        
         animation-fill-mode: both;
+        
     }
 
-    @keyframes slideleft {
-        0% {
-            color: rgba(255, 255, 255, 0);
-            opacity: 0;
-        }
-        45% {
-            color: white;
-            opacity: 1;
-        }
-
-        100% {
-            color: white;
-            opacity: 1;
-        }
-    }
+   
 
 }
 

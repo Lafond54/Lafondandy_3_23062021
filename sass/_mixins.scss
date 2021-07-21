@@ -52,10 +52,8 @@
     background: $gris-fond;
     border-radius: 18px;
     padding: 1.8rem 2.2rem;
-    
 
     box-shadow: 1px 5px 11px rgba(194, 194, 194, 0.726);
-
 }
 
 // Puce liste fonctionnement
@@ -93,15 +91,17 @@
         width: $wcoeur;
     }
     &__coeur:hover &__coeursvg {
-        // fill="url(#Gradient-1)" // Degradé SVG ne marche pas
-        fill: black;
-        transition: fill 0.5s;
+        opacity: 0;
+        transition: 0.6s;
+    }
+    &__coeur:hover &__coeur__rempli {
+        opacity: 1;
+        transition: 0.6s;
     }
 }
 
 // Footer
 @mixin pied {
-    
     background-color: $fond-footer;
     padding-left: 1.5rem;
     ol {
@@ -109,14 +109,10 @@
     }
     color: white;
     font-size: 0.9rem;
-    
 
     @media (min-width: 1000px) {
-
         padding: 0 5rem 0 5rem;
- 
     }
-
 
     &__logo {
         @include omf(rgb(255, 255, 255), 1rem, 100);
@@ -135,7 +131,7 @@
             color: white;
         }
     }
-  
+
     &__liste {
         @media (min-width: 1000px) {
             display: flex;
@@ -153,32 +149,10 @@
         margin-right: 0.3rem;
         font-size: 0.7rem;
     }
-
-
-
 }
-
 
 //MQ @content ne marche pas erreur -> ;
 
-
-
-
-//Loading Spinner
-@mixin loadingspinner {
-.lspinner {
-    position: fixed;
-    z-index: 15;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-color: rgb(255, 255, 255);
-    opacity: 0.6;
-    display: flex;
-    z-index: 10;
-    animation: deletefond 2.9s forwards;
-}
 @keyframes deletefond {
     90% {
         opacity: 0.6;
@@ -191,6 +165,17 @@
     }
 }
 
+//Loading Spinner
+@mixin loadingspinner {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.6;
+    animation: deletefond 2.5s forwards;
+}
+
 .load {
     position: fixed;
     margin-left: auto;
@@ -198,7 +183,6 @@
     transform: translateX(-50%) translateY(-50%);
     top: 50%;
     left: 50%;
-    z-index: 20;
     width: $sizebar * 6.5;
     height: $sizebar * 2;
     display: flex;
@@ -211,11 +195,9 @@
         &:nth-child(1) {
             background-color: $primaire;
             border-radius: 10px 0 10px 0;
-            
         }
         &:nth-child(2) {
             background-color: $primaire;
-
         }
         &:nth-child(3) {
             background-color: $vert-nouveau;
@@ -227,7 +209,6 @@
         }
         &:nth-child(4) {
             background-color: $secondaire;
-
         }
         &:nth-child(5) {
             background-color: $secondaire;
@@ -235,10 +216,9 @@
         }
         height: 100%;
         width: $sizebar;
-        animation: bars 1.2s  ease-in-out forwards;
+        animation: bars 1.2s ease-in-out forwards;
 
         animation-play-state: initial;
-        
 
         @for $i from 1 through 5 {
             &--#{$i} {
@@ -247,13 +227,13 @@
         }
     }
 }
+
 @keyframes bars {
-    0% {opacity: 1;
-        
+    0% {
+        opacity: 1;
     }
     10% {
         transform: scaleY(0.5);
-
     }
     90% {
         opacity: 1;
@@ -261,20 +241,14 @@
     100% {
         opacity: 0;
         transform: scaleY(1);
-
-
     }
 }
-}
-
-// 
+//
 @mixin animliste {
-
     opacity: 0;
-    animation: animmenu 1.2s  forwards;
-    transition-timing-function: cubic-bezier(.29,-0.08,.65,1.58);
+    animation: animmenu 1.2s forwards;
+    transition-timing-function: cubic-bezier(0.29, -0.08, 0.65, 1.58);
 
-    
     @for $i from 1 through 3 {
         &--#{$i} {
             animation-delay: 250ms * $i;
@@ -289,12 +263,10 @@
         opacity: 0;
     }
     55% {
-
         opacity: 1;
     }
 
     100% {
-
         opacity: 1;
     }
 }

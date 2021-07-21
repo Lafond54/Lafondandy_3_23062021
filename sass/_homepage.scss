@@ -2,7 +2,6 @@ body {
     font-family: "Roboto", sans-serif;
     margin: 0;
     background: white;
-    @include loadingspinner;
 }
 
 //Header
@@ -187,10 +186,23 @@ body {
 
     @include coeur;
     &__coeur {
+        position: relative;
         padding-right: 1rem;
+        &__rempli {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            width: 25px;
+            height: 25px;
+        }
     }
 }
 
 .footer {
     @include pied;
+}
+
+.lspinner {
+    @include loadingspinner;
 }
