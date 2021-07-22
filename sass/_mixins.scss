@@ -151,7 +151,7 @@
     }
 }
 
-//MQ @content ne marche pas erreur -> ;
+
 
 @keyframes deletefond {
     90% {
@@ -246,10 +246,10 @@
 //
 @mixin animliste {
     opacity: 0;
-    animation: animmenu 1.2s forwards;
+    animation: animmenu 1s forwards;
     transition-timing-function: cubic-bezier(0.29, -0.08, 0.65, 1.58);
 
-    @for $i from 1 through 3 {
+    @for $i from 1 through 4 {
         &--#{$i} {
             animation-delay: 250ms * $i;
         }

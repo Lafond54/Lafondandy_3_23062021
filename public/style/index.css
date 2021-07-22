@@ -284,6 +284,9 @@ body {
   border-radius: 12px 12px 12px 12px;
   margin: 0 1.2rem 0 1.2rem;
 }
+.article:link {
+  color: black;
+}
 .article:visited {
   color: black;
 }
@@ -566,7 +569,7 @@ body {
   width: 0;
 }
 .menu:hover > .menu__anim {
-  width: 90px;
+  width: 70px;
   animation: slideleft 0.6s;
 }
 .menu .fas.fa-check-circle {
@@ -620,7 +623,7 @@ body {
 
 .itemmenu {
   opacity: 0;
-  animation: animmenu 1.2s forwards;
+  animation: animmenu 1s forwards;
   transition-timing-function: cubic-bezier(0.29, -0.08, 0.65, 1.58);
 }
 .itemmenu--1 {
@@ -631,6 +634,9 @@ body {
 }
 .itemmenu--3 {
   animation-delay: 750ms;
+}
+.itemmenu--4 {
+  animation-delay: 1000ms;
 }
 
 /*# sourceMappingURL=index.css.map */
